@@ -6,6 +6,8 @@ const STYLES = ['btn-primary', 'btn-outline'];
 const SIZES = ['btn--medium', 'btn--large'];
 
 export const Button = ({
+    btnColor,
+    fontColor,
     children,
     type,
     onClick,
@@ -19,6 +21,7 @@ export const Button = ({
     return (
         <Link to={link} className='btn-mobile'>
             <button
+                style={{ backgroundColor: btnColor, color: fontColor }}
                 className={`btn ${checkButtonStyle} ${checkButtonSize}`}
                 onClick={onClick}
                 type={type}
