@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Trailer.css'
+import Footer from '../../footer-component/Footer'
 
 function Trailer() {
     return (
@@ -13,6 +14,9 @@ function Trailer() {
                     So what are you waiting for, go and <Link to='/services'>ENROLL</Link> Today.
                 </p>
             </div>
+            <Footer
+                description={'We are here to help you with your adventure needs. Contact us for more information. 000-888-666-444'}
+            />
         </>
     )
 }

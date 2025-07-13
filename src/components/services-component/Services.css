@@ -1,0 +1,40 @@
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.services-table th {
+    background-color: #007BFF;
+    /* blue header */
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.services-table td {
+    background-color: #f0f0f0;
+    /* grey rows */
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.services-table tr:nth-child(even) td {
+    background-color: #e0e0e0;
+    /* slightly darker grey for even rows */
+}
+
+.services__item__img {
+    position: relative;
+    top: 2px;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    display: block;
+    width: 20%;
+    max-width: 20%;
+    height: 20%;
+    max-height: 20%;
+    object-fit: cover;
+    border-radius: 15px;
+}
