@@ -51,6 +51,14 @@
     transition: box-shadow 0.2s;
 }
 
+.product-item.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: #f0f0f0;
+    color: #888;
+    cursor: not-allowed;
+}
+
 .product__item__pic-wrap {
     position: relative;
     width: 100%;
@@ -72,6 +80,11 @@
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+.product-item.disabled img {
+    filter: grayscale(100%);
+    opacity: 0.7;
 }
 
 .product-item img, .product__item__pic-wrap img {
