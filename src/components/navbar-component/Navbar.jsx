@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../button-component/Button';
 import './Navbar.css'
@@ -44,29 +44,43 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu-active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-              Services
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-              Products
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-              Sign Up
-            </Link>
-          </li>
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                Services
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
+                Products
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
+                Sign Up
+              </Link>
+            </li>
           </ul>
-          { button && 
-            <Button buttonStyle='btn--outline' link='sign-up'>SIGN  UP</Button>
+          {
+            button && sessionStorage.getItem('userItem') ?
+              <div style={{color:'white', padding: '5px'}}>{ `Welcome ${ JSON.parse(sessionStorage.getItem('userItem')).firstName }
+               ${ JSON.parse(sessionStorage.getItem('userItem')).lastName }` }
+               <Button 
+               buttonStyle='btn--outline' 
+               link='/'
+               onClick={() => {
+                 sessionStorage.removeItem('userItem');
+                 alert('You have been signed out successfully!');
+                 window.location.reload();
+               }}>
+                SIGN OUT
+                </Button>
+              </div> :
+              <Button buttonStyle='btn--outline' link='sign-up'>SIGN UP</Button>
           }
         </div>
       </nav>

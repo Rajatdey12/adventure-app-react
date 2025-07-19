@@ -11,7 +11,7 @@ function Trailer() {
                 <h1>Witness the true happiness Just Starting at Rs 1999/- only.</h1>
                 <p>
                     Spread across 1.2 acres of land with lots of fun activities just waiting for you.
-                    So what are you waiting for, go and <Link to='/services'>ENROLL</Link> Today.
+                    So what are you waiting for, go and <Link to='/Sign-up'>ENROLL</Link> Today.
                 </p>
             </div>
             <Footer

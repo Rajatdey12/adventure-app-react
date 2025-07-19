@@ -10,6 +10,8 @@ import Trailer from './components/pages/trailer-component/Trailer';
 import Services from './components/services-component/Services';
 import Products from './components/product-component/Products';
 import ScrollToTop from './components/common/ScrollToTop';
+import SignUp from './components/sign-up-component/SignUp';
+import ProtectedRoute from './components/common/ProtectedRoute';
 
 function App() {
   return (
@@ -20,8 +22,17 @@ function App() {
       <Routes>
         <Route path = "/" exact Component={ Home }/>
         <Route path = "/trailer" exact Component = { Trailer } />
-        <Route path = "/services" exact Component = { Services } />
-        <Route path = "/products" exact Component = { Products } />
+        <Route path = "/services" exact element = {
+          <ProtectedRoute>
+           <Services /> 
+           </ProtectedRoute>
+           } />
+        <Route path = "/products" exact element = {
+          <ProtectedRoute>
+           <Products /> 
+           </ProtectedRoute>
+           } />
+        <Route path = "/sign-up" exact Component = { SignUp } />
       </Routes>
     </Router>
     </>
